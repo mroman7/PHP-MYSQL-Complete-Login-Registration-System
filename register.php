@@ -13,10 +13,10 @@ require_once("Config.php");
 
     if(isset($_POST['submit_registeration'])){
         // getting values from user
-        $fname = $_POST['firstName'];
-        $lname = $_POST['lastName'];
-        $email = $_POST['email'];
-        $pwd = $_POST['password'];
+        $fname = mysqli_real_escape_string($_POST['firstName']);
+        $lname = mysqli_real_escape_string($_POST['lastName']);
+        $email = mysqli_real_escape_string($_POST['email']);
+        $pwd = mysqli_real_escape_string($_POST['password']);
         // encrypt password in SHA1 
         $password = SHA1($pwd);
         
