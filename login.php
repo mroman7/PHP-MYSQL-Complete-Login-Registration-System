@@ -14,8 +14,8 @@ require_once("Config.php");
 
     if(isset($_POST['submit_login'])){
         // getting user's enter data
-        $email = $_POST['email'];
-        $pwd = $_POST['password'];
+        $email = mysqli_real_escape_string($_POST['email']);
+        $pwd = mysqli_real_escape_string($_POST['password']);
         // encrypt password to SHA1 as in register to match
         $pass = SHA1($pwd);
 
