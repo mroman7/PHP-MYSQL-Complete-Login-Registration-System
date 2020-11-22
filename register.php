@@ -1,4 +1,5 @@
 <?php 
+// loading configuration file
 require_once("Config.php");
     // creating Config Class Object
     $config = new Config;
@@ -24,12 +25,11 @@ require_once("Config.php");
         echo 
         $query = mysqli_query($db_Connect, $s);
         if($query){
+            // if data inserted successfully then redirect to homepage with "Success Flag"
             header("Location: index.php?flag=success");
         }
         else {
+            // if data inserte failed redirect to homepage with "failed Flag"
             header("Location: index.php?flag=failed");
         }
     }
-
-
-?>

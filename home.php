@@ -1,7 +1,8 @@
 <?php 
 
 session_start();
-if($_SESSION["email"]){
+    // checking if SESSION is set?
+    if(isset($_SESSION["email"])){
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +23,7 @@ if($_SESSION["email"]){
 
 <?php 
 }
+// If SESSION not set then redirect to homepage
 else {
     header("Location: index.php");
 }
